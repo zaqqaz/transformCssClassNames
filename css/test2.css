@@ -1,0 +1,26 @@
+@import "../../styles/colors.css";
+@import "../../styles/typography.css";
+
+.form {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--color-white);
+    font-weight: bold;
+    font-family: var(--font-family-special);
+}
+
+.type-win {
+    background-color: var(--color-form-green);
+}
+
+.type-draw {
+    background-color: var(--color-form-grey);
+}
+
+.type-loose {
+    background-color: var(--color-form-red);
+}

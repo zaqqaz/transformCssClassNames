@@ -25,9 +25,8 @@ function updateCase(filePath) {
 }
 
 async function processCSS() {
-    const cssPaths = [
-        './**/*.css',
-    ];
+    console.log(process.argv);
+    const [node, script, ...cssPaths] = process.argv;
 
     const cssFiles = cssPaths.reduce((arr, path) => ([...arr, ...glob.sync(path)]), []);
     await Promise.all(cssFiles.map(updateCase));
