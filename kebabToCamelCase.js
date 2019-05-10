@@ -14,18 +14,21 @@ function updateCase(filePath) {
     for (const identifier of matches) {
         const camelCase = identifier.replace(/-([a-z])/g, (g) => g[1].toUpperCase());
 
-        const identifierRegExp = new RegExp(identifier.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'), 'g');
-        result = result.replace(
-            identifierRegExp,
-            camelCase,
-        );
+        try {
+            const identifierRegExp = new RegExp(identifier.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'), 'g');
+            result = result.replace(
+                identifierRegExp,
+                camelCase,
+            );
+        }  catch (e) {
+            console.error(e);
+        }
     }
 
     fs.writeFileSync(filePath, result,'utf8');
 }
 
 async function processCSS() {
-    console.log(process.argv);
     const [node, script, ...cssPaths] = process.argv;
 
     const cssFiles = cssPaths.reduce((arr, path) => ([...arr, ...glob.sync(path)]), []);
