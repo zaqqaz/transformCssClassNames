@@ -9,13 +9,13 @@ function updateCase(filePath) {
         return;
     }
 
-    let result;
+    let result = src;
 
     for (const identifier of matches) {
         const camelCase = identifier.replace(/-([a-z])/g, (g) => g[1].toUpperCase());
 
         const identifierRegExp = new RegExp(identifier.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'), 'g');
-        result = src.replace(
+        result = result.replace(
             identifierRegExp,
             camelCase,
         );
