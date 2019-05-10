@@ -3,10 +3,18 @@
 ## KebabToCamelCase
 
 **Example:**
+
 `.demo-class-name` => `.demoClassName`
 
-**How to**
-`node kebabToCamelCase.js ./css/**/*.css`
+**Install:**
+```
+yarn add transform-css-class-names
+```
+
+**Usage:**
+
+`kebabToCamelCase ./css/**/*.css`
 
 You can pass as many paths as you wish, eg: 
-`node kebabToCamelCase.js ./css/**/*.css ./less/**/*.less ./sass/**/*.scss`
+
+`kebabToCamelCase ./css/**/*.css ./less/**/*.less ./sass/**/*.scss`

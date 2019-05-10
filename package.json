@@ -1,5 +1,11 @@
 {
+  "name": "transform-css-class-names",
+  "main": "./kebabToCamelCase.js",
+  "version": "0.0.2",
   "dependencies": {
     "glob": "^7.1.4"
+  },
+  "bin": {
+    "kebabToCamelCase": "./kebabToCamelCase.js"
   }
 }
